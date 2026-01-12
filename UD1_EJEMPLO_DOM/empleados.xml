@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<empresa>
+        
+    <departamento nombre="Direccion">
+                
+        <empleado id="E001">
+                        
+            <nombre>Carlos Ruiz</nombre>
+                        
+            <puesto>CEO</puesto>
+                        
+            <salario moneda="EUR">85000</salario>
+                        
+            <fecha_contratacion>2018-03-15</fecha_contratacion>
+                        
+            <email>carlos.ruiz@empresa.com</email>
+                    
+        </empleado>
+            
+        <empleado id="E013">
+            <nombre>Paco Porras</nombre>
+            <puesto>Fumador de Porritos</puesto>
+            <salario>25000</salario>
+            <fecha_contratacion>2025-12-27</fecha_contratacion>
+            <email>pacoporras@empresa.com</email>
+        </empleado>
+    </departamento>
+        
+    <departamento nombre="Desarrollo">
+                
+        <empleado id="E002">
+                        
+            <nombre>Ana López</nombre>
+                        
+            <puesto>CTO</puesto>
+                        
+            <salario moneda="EUR">65000</salario>
+                        
+            <fecha_contratacion>2019-01-10</fecha_contratacion>
+                        
+            <email>ana.lopez@empresa.com</email>
+                    
+        </empleado>
+                
+        <empleado id="E003">
+                        
+            <nombre>Miguel Ángel Torres</nombre>
+                        
+            <puesto>Senior Backend Dev</puesto>
+                        
+            <salario moneda="EUR">48000</salario>
+                        
+            <fecha_contratacion>2020-05-22</fecha_contratacion>
+                        
+            <email>miguel.torres@empresa.com</email>
+                    
+        </empleado>
+                
+        <empleado id="E004">
+                        
+            <nombre>Laura García</nombre>
+                        
+            <puesto>Frontend Dev</puesto>
+                        
+            <salario moneda="EUR">35000</salario>
+                        
+            <fecha_contratacion>2021-11-03</fecha_contratacion>
+                        
+            <email>laura.garcia@empresa.com</email>
+                    
+        </empleado>
+                
+        <empleado id="E005">
+                        
+            <nombre>David Kim</nombre>
+                        
+            <puesto>DevOps Engineer</puesto>
+                        
+            <salario moneda="EUR">42000</salario>
+                        
+            <fecha_contratacion>2022-02-14</fecha_contratacion>
+                        
+            <email>david.kim@empresa.com</email>
+                    
+        </empleado>
+            
+    </departamento>
+        
+    <departamento nombre="Recursos Humanos">
+                
+        <empleado id="E006">
+                        
+            <nombre>Elena Blanco</nombre>
+                        
+            <puesto>Gerente RRHH</puesto>
+                        
+            <salario moneda="EUR">40000</salario>
+                        
+            <fecha_contratacion>2019-08-30</fecha_contratacion>
+                        
+            <email>elena.blanco@empresa.com</email>
+                    
+        </empleado>
+                
+        <empleado id="E007">
+                        
+            <nombre>Pedro Martínez</nombre>
+                        
+            <puesto>Reclutador Junior</puesto>
+                        
+            <salario moneda="EUR">22000</salario>
+                        
+            <fecha_contratacion>2023-06-01</fecha_contratacion>
+                        
+            <email>pedro.martinez@empresa.com</email>
+                    
+        </empleado>
+            
+    </departamento>
+        
+    <departamento nombre="Ventas">
+                
+        <empleado id="E008">
+                        
+            <nombre>Sofía Vergara</nombre>
+                        
+            <puesto>Directora Comercial</puesto>
+                        
+            <salario moneda="EUR">55000</salario>
+                        
+            <fecha_contratacion>2020-02-20</fecha_contratacion>
+                        
+            <email>sofia.vergara@empresa.com</email>
+                    
+        </empleado>
+                
+        <empleado id="E009">
+                        
+            <nombre>Jorge Nandez</nombre>
+                        
+            <puesto>Ejecutivo de Cuentas</puesto>
+                        
+            <salario moneda="EUR">30000</salario>
+                        
+            <fecha_contratacion>2021-09-15</fecha_contratacion>
+                        
+            <email>jorge.nandez@empresa.com</email>
+                    
+        </empleado>
+                
+        <empleado id="E010">
+                        
+            <nombre>Lucía Gil</nombre>
+                        
+            <puesto>Representante de Ventas</puesto>
+                        
+            <salario moneda="EUR">28000</salario>
+                        
+            <fecha_contratacion>2022-04-10</fecha_contratacion>
+                        
+            <email>lucia.gil@empresa.com</email>
+                    
+        </empleado>
+            
+    </departamento>
+        
+    
+    <departamento nombre="Marketing">
+                
+        <empleado id="E011">
+                        
+            <nombre>Marcos Rojo</nombre>
+                        
+            <puesto>Diseñador Gráfico</puesto>
+                        
+            <salario moneda="EUR">26000</salario>
+                        
+            <fecha_contratacion>2023-01-15</fecha_contratacion>
+                        
+            <email>marcos.rojo@empresa.com</email>
+                    
+        </empleado>
+                
+        <empleado id="E012">
+                        
+            <nombre>Clara Oswald</nombre>
+                        
+            <puesto>Community Manager</puesto>
+                        
+            <salario moneda="EUR">24000</salario>
+                        
+            <fecha_contratacion>2023-03-22</fecha_contratacion>
+                        
+            <email>clara.oswald@empresa.com</email>
+                    
+        </empleado>
+            
+    </departamento>
+    
+</empresa>
