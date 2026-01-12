@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo>
+    <genero nombre="Ciencia Ficcion">
+        <pelicula id="CF01">
+            <titulo>Interstellar</titulo>
+            <director>Christopher Nolan</director>
+            <duracion_minutos>169</duracion_minutos>
+            <vista>true</vista>
+        </pelicula>
+        <pelicula id="CF02">
+            <titulo>Dune</titulo>
+            <director>Denis Villeneuve</director>
+            <duracion_minutos>155</duracion_minutos>
+            <vista>false</vista>
+        </pelicula>
+        <pelicula id="CF03">
+            <titulo>Blade Runner 2049</titulo>
+            <director>Denis Villeneuve</director>
+            <duracion_minutos>164</duracion_minutos>
+            <vista>true</vista>
+        </pelicula>
+        <pelicula id="CF04">
+            <titulo>Matrix</titulo>
+            <director>Lana Wachowski</director>
+            <duracion_minutos>136</duracion_minutos>
+            <vista>true</vista>
+        </pelicula>
+    </genero>
+
+    <genero nombre="Terror">
+        <pelicula id="TE01">
+            <titulo>El Resplandor</titulo>
+            <director>Stanley Kubrick</director>
+            <duracion_minutos>146</duracion_minutos>
+            <vista>true</vista>
+        </pelicula>
+        <pelicula id="TE02">
+            <titulo>Alien, el octavo pasajero</titulo>
+            <director>Ridley Scott</director>
+            <duracion_minutos>117</duracion_minutos>
+            <vista>false</vista>
+        </pelicula>
+        <pelicula id="TE03">
+            <titulo>Psicosis</titulo>
+            <director>Alfred Hitchcock</director>
+            <duracion_minutos>109</duracion_minutos>
+            <vista>true</vista>
+        </pelicula>
+    </genero>
+    
+    <genero nombre="Comedia">
+        <pelicula id="CO01">
+            <titulo>La vida de Brian</titulo>
+            <director>Terry Jones</director>
+            <duracion_minutos>94</duracion_minutos>
+            <vista>false</vista>
+        </pelicula>
+        <pelicula id="CO02">
+            <titulo>El Gran Lebowski</titulo>
+            <director>Joel Coen</director>
+            <duracion_minutos>117</duracion_minutos>
+            <vista>true</vista>
+        </pelicula>
+        <pelicula id="CO03">
+            <titulo>Aterriza como puedas</titulo>
+            <director>Jim Abrahams</director>
+            <duracion_minutos>88</duracion_minutos>
+            <vista>false</vista>
+        </pelicula>
+    </genero>
+</catalogo>
