@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mundo_rpg version="2.0">
+    <gremio nombre="Guardianes de la Luz">
+        <heroe id="H01" clase="Paladin">
+            <nombre>Uther</nombre>
+            <nivel>20</nivel>
+            <vida_actual>180</vida_actual>
+            <vida_maxima>200</vida_maxima>
+            <ataque>35</ataque>
+            <esta_vivo>true</esta_vivo>
+        </heroe>
+        <heroe id="H02" clase="Sacerdote">
+            <nombre>Anduin</nombre>
+            <nivel>18</nivel>
+            <vida_actual>90</vida_actual>
+            <vida_maxima>90</vida_maxima>
+            <ataque>10</ataque>
+            <esta_vivo>true</esta_vivo>
+        </heroe>
+    </gremio>
+
+    <gremio nombre="Sombras del Abismo">
+        <heroe id="H03" clase="Nigromante">
+            <nombre>KelThuzad</nombre>
+            <nivel>25</nivel>
+            <vida_actual>0</vida_actual>
+            <vida_maxima>120</vida_maxima>
+            <ataque>50</ataque>
+            <esta_vivo>false</esta_vivo>
+        </heroe>
+        <heroe id="H04" clase="Asesino">
+            <nombre>Valeera</nombre>
+            <nivel>15</nivel>
+            <vida_actual>40</vida_actual>
+            <vida_maxima>80</vida_maxima>
+            <ataque>60</ataque>
+            <esta_vivo>true</esta_vivo>
+        </heroe>
+    </gremio>
+
+    <gremio nombre="Juglares Errantes">
+        <heroe id="H05" clase="Bardo">
+            <nombre>Jaskier</nombre>
+            <nivel>5</nivel>
+            <vida_actual>30</vida_actual>
+            <vida_maxima>50</vida_maxima>
+            <ataque>5</ataque>
+            <esta_vivo>true</esta_vivo>
+        </heroe>
+        <heroe id="H06" clase="Druida">
+            <nombre>Malfurion</nombre>
+            <nivel>30</nivel>
+            <vida_actual>15</vida_actual>
+            <vida_maxima>150</vida_maxima>
+            <ataque>40</ataque>
+            <esta_vivo>true</esta_vivo>
+        </heroe>
+    </gremio>
+    
+    <inventario_global>
+        <objeto id="OBJ1" valor="50">Pocion de Vida Menor</objeto>
+        <objeto id="OBJ2" valor="1500">Filo de la Agonía</objeto>
+        <objeto id="OBJ3" valor="5000">Baculo de Atiesh</objeto>
+    </inventario_global>
+</mundo_rpg>
