@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <!-- ========================================================= -->
+    <!--        Definición de los appenders                        -->
+    <!-- ========================================================= -->
+
+    <!-- Appender de consola -->
+    <Appenders>
+        <Console name="Consola" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yy-MM-dd HH:mm} [%t] %-5level %c{1} - %msg%n"/>
+        </Console>
+
+        <!-- Appender de fichero rotativo -->
+        <RollingFile name="FicheroRotativo"
+                     fileName="logs/aplicacion.log"
+                     filePattern="logs/aplicacion-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %c{1} - %msg%n"/>
+            <Policies>
+                <!-- Rota el log cada 10 MB -->
+                <SizeBasedTriggeringPolicy size="10MB"/>
+                <!-- También rota cada día -->
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <!-- Mantiene hasta 10 ficheros antiguos -->
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+
+        <!-- Appender de fichero secuencial (sin rotación) -->
+        <File name="FicheroSecuencial" fileName="logs/secuencial.log" append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %c{1} - %msg%n"/>
+        </File>
+    </Appenders>
+
+
+    <!-- ========================================================= -->
+    <!--       Configuración de loggers                            -->
+    <!-- ========================================================= -->
+
+    <Loggers>
+
+        <!-- Logger específico para una clase 
+        <Logger name="com.dam2.main.Saludar" level="debug" additivity="false">
+             Solo enviará sus logs a estos appenders 
+            <AppenderRef ref="FicheroSecuencial"/>
+            <AppenderRef ref="Consola"/>
+        </Logger>
+	-->
+        <!-- Logger raíz (para el resto de la aplicación) -->
+        <Root level="debug">
+            <AppenderRef ref="FicheroRotativo"/>
+            <AppenderRef ref="Consola"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
