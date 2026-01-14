@@ -58,6 +58,46 @@ public class Principal {
 				
 				gestion.beberPorcion(id_pocion, cantidadVida);
 				break;
+			case 4:
+				System.out.print("Introduzca id del heroe que quieres dañar: ");
+				String id_dañar = Leer.linea();
+				
+				System.out.print("Introduzca cuando daño: ");
+				int daño = Leer.entero();
+				
+				gestion.recibeGolpe(id_dañar, daño);
+				break;
+			case 5:
+				System.out.print("Introduzca id del objeto a eliminar: ");
+				String id_objeto = Leer.linea();
+				
+				gestion.venderObjeto(id_objeto);
+				break;
+			case 6:
+				System.out.print("En que gremio lo quiere introducir?: ");
+				String gremio = Leer.linea();
+				
+				System.out.println("Introduzca los datos del heroe");
+				System.out.print("ID: ");
+				String id = Leer.linea();
+				System.out.print("Clase: ");
+				String clase = Leer.linea();
+				System.out.print("Nombre: ");
+				String nombre = Leer.linea();
+				System.out.print("Nivel: ");
+				int nivel = Leer.entero();
+				System.out.print("Vida actual: ");
+				int vidaActual = Leer.entero();
+				System.out.print("Vida maxima: ");
+				int vidaMaxima = Leer.entero();
+				System.out.print("Ataque: ");
+				int ataque = Leer.entero();
+				System.out.print("Esta vivo?: ");
+				Boolean estaVivo = Leer.booleano();
+				
+				Heroe heroe = new Heroe(id, clase, nombre, nivel, vidaActual, vidaMaxima, ataque, estaVivo);
+				gestion.crearMercenario(gremio, heroe);
+				break;
 				
 			}
 			

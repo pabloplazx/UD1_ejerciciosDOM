@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<universidad nombre="Universidad Magna">
+    
+    <facultades>
+        <facultad nombre="Ingenieria y Tecnologia">
+            <grado id="G-INF" nombre="Ingenieria Informatica">
+                <alumno id="A001" beca="true">
+                    <datos>
+                        <nombre>Ana Garcia</nombre>
+                        <ciudad>Madrid</ciudad>
+                    </datos>
+                    <expediente>
+                        <asignatura ref="AS01"><nota>8.5</nota></asignatura>
+                        <asignatura ref="AS02"><nota>4.0</nota></asignatura>
+                        <asignatura ref="AS03"><nota>9.0</nota></asignatura>
+                    </expediente>
+                </alumno>
+                <alumno id="A002" beca="false">
+                    <datos>
+                        <nombre>David Miller</nombre>
+                        <ciudad>Barcelona</ciudad>
+                    </datos>
+                    <expediente>
+                        <asignatura ref="AS01"><nota>3.5</nota></asignatura>
+                        <asignatura ref="AS02"><nota>5.0</nota></asignatura>
+                    </expediente>
+                </alumno>
+            </grado>
+            
+            <grado id="G-CIB" nombre="Ciberseguridad">
+                <alumno id="A003" beca="true">
+                    <datos>
+                        <nombre>Elliot Alderson</nombre>
+                        <ciudad>Nueva York</ciudad>
+                    </datos>
+                    <expediente>
+                        <asignatura ref="AS01"><nota>10.0</nota></asignatura>
+                        <asignatura ref="AS04"><nota>9.5</nota></asignatura>
+                    </expediente>
+                </alumno>
+            </grado>
+        </facultad>
+
+        <facultad nombre="Artes y Humanidades">
+            <grado id="G-FIL" nombre="Filosofia">
+                <alumno id="A004" beca="false">
+                    <datos>
+                        <nombre>Sofia Mundo</nombre>
+                        <ciudad>Sevilla</ciudad>
+                    </datos>
+                    <expediente>
+                        <asignatura ref="AS05"><nota>7.0</nota></asignatura>
+                        <asignatura ref="AS06"><nota>6.5</nota></asignatura>
+                    </expediente>
+                </alumno>
+            </grado>
+            <grado id="G-HIS" nombre="Historia">
+                <alumno id="A005" beca="true">
+                    <datos>
+                        <nombre>Carlos Magno</nombre>
+                        <ciudad>Toledo</ciudad>
+                    </datos>
+                    <expediente>
+                        <asignatura ref="AS06"><nota>4.5</nota></asignatura>
+                    </expediente>
+                </alumno>
+            </grado>
+        </facultad>
+    </facultades>
+
+    <plan_estudios>
+        <materia id="AS01" creditos="6" coste="120">Programacion Java</materia>
+        <materia id="AS02" creditos="6" coste="120">Bases de Datos</materia>
+        <materia id="AS03" creditos="4" coste="80">Sistemas Operativos</materia>
+        <materia id="AS04" creditos="5" coste="100">Criptografia</materia>
+        <materia id="AS05" creditos="6" coste="90">Etica Moderna</materia>
+        <materia id="AS06" creditos="6" coste="90">Historia del Arte</materia>
+    </plan_estudios>
+
+</universidad>
