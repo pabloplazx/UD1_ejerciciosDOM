@@ -52,16 +52,48 @@ public class Principal {
 				gestion.generarBoletin(idBoletin);
 				break;
 			case 2:
-				System.out.println("Introduzca nombre de asignatura: ");
+				System.out.print("Introduzca nombre de asignatura: ");
 				String nombreAsignatura = Leer.linea();
 				
 				gestion.listarAlumnosPorAsignatura(nombreAsignatura);
 				break;
 			case 3:
-				System.out.println("Introduza id alumno: ");
+				System.out.print("Introduza id alumno: ");
 				String id_calcularMatricula = Leer.linea();
 				
 				System.out.println(gestion.calcularPrecioMatricula(id_calcularMatricula));
+				break;
+			case 4:
+				System.out.print("Introduzca nombre de la facultad: ");
+				String nombreFacultad = Leer.linea();
+				
+				System.out.println("Nota media de la facultad: "+gestion.notaMediaFacultad(nombreFacultad));
+				break;
+			case 5:
+				//String idAlumno, String refAsignatura, double nuevaNota
+				System.out.print("Introduzca el id del alumno: ");
+				String idCambiar = Leer.linea();
+				
+				System.out.print("Introduzca la refencia de la asignatura: ");
+				String refeCambiar = Leer.linea();
+				
+				System.out.print("Introduzca la nota nueva: ");
+				double nuevaNota = Leer.decimal();
+				
+				gestion.modificarNota(idCambiar, refeCambiar, nuevaNota);
+				break;
+			case 6:
+				//String idAlumno, String nuevoGrado
+				System.out.print("Introduzca id del alumno que quiere cambiar el expediente: ");
+				String idExpediente = Leer.linea();
+				
+				System.out.print("Introduzca el nuevo grado: ");
+				String gradoNuevo = Leer.linea();
+				
+				gestion.moverExpedienteOptimizado(idExpediente, gradoNuevo);
+				break;
+			case 7:
+				gestion.limpiezaDeSuspensos();
 				break;
 			case 8:
 				System.out.println("Saliendo..");
