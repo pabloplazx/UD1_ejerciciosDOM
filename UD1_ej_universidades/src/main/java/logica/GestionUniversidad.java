@@ -43,7 +43,7 @@ public class GestionUniversidad {
 		
 	}
 	
-	public void generarBoletinNotas(String idAlumno) {
+	public void generarBoletinNotasIA(String idAlumno) {
 	    // Variables para guardar lo que encontremos
 	    Alumno alumnoBuscado = null; 
 	    String nombreGrado = "";
@@ -148,5 +148,206 @@ public class GestionUniversidad {
 	        System.out.println("- " + nombreRealAsignatura + ": " + asigAlumno.getNota());
 	    }
 	}
+	
+	public void generarBoletin(String idusuario) {
+		boolean encontrado = false;
+		Alumno alu = null;
+		String nombreGrado = "";
+		
+		NodeList facultades = doc.getElementsByTagName("facultad");
+		
+		for (int i=0; i<facultades.getLength(); i++) {
+			Element facultad = (Element) facultades.item(i);
+			
+			NodeList grados = facultad.getElementsByTagName("grado");
+			for (int j=0; j<grados.getLength(); j++) {
+				Element grado = (Element) grados.item(j);
+				
+				NodeList alumnos = grado.getElementsByTagName("alumno");
+				for (int k=0; k<alumnos.getLength(); k++) {
+					Element alumno = (Element) alumnos.item(k);
+					
+					if (alumno.getAttribute("id").equals(idusuario)) {
+						encontrado = true;
+						nombreGrado = grado.getAttribute("nombre");
+						
+						String idAlumno = alumno.getAttribute("id");
+						boolean tieneBeca = Boolean.parseBoolean(alumno.getAttribute("beca"));
+						
+						
+						Element datos = (Element) alumno.getElementsByTagName("datos").item(0);
+						
+						String nombre = datos.getElementsByTagName("nombre").item(0).getTextContent();
+						String ciudad = datos.getElementsByTagName("ciudad").item(0).getTextContent();
+						
+						ArrayList<Asignatura> asigs = new ArrayList<>();
+						
+						Element expediente = (Element) alumno.getElementsByTagName("expediente").item(0);
+						
+						NodeList asignaturas = expediente.getElementsByTagName("asignatura");
+						
+						for (int y=0; y<asignaturas.getLength(); y++) {
+							Element asignatura = (Element) asignaturas.item(y);
+							
+							String referenciaAsignatura = asignatura.getAttribute("ref");
+							double notaAsignatura = Double.parseDouble(asignatura.getElementsByTagName("nota").item(0).getTextContent());
+							
+							Asignatura asig = new Asignatura(referenciaAsignatura, notaAsignatura);
+							asigs.add(asig);
+						}
+						
+						Alumno al = new Alumno(idAlumno, tieneBeca, nombre, ciudad, asigs );
+						alu = al;
+					}
+				}
+			}
+		}
+		
+		
+		Element planEstudios = (Element) doc.getElementsByTagName("plan_estudios").item(0);
+		
+		NodeList materias = planEstudios.getElementsByTagName("materia");
+		
+		System.out.println("Boletin de: "+alu.getNombre()+" ("+nombreGrado+")"+":");
+		for (int x=0; x<materias.getLength(); x++) {
+			Element materia = (Element) materias.item(x);
+			
+			for (Asignatura asig : alu.getAsignaturas()) {
+				
+				if (asig.getIdRef().equals(materia.getAttribute("id"))) {
+					System.out.println("- "+materia.getTextContent()+":"+asig.getNota());
+				}
+			}
+		}
+		
+	}
+	
+	public void listarAlumnosPorAsignatura(String nombreAsignatura) {
+		
+		boolean asignaturaEncontrada = false;
+		String referencia = "";
+		ArrayList<String> nombresAlumnos = new ArrayList<>();
+		
+		Element planEstudios = (Element) doc.getElementsByTagName("plan_estudios").item(0);
+		
+		NodeList materias = planEstudios.getElementsByTagName("materia");
+		
+		for (int i=0; i<materias.getLength(); i++) {
+			
+			Element materia = (Element) materias.item(i);
+			
+			if (materia.getTextContent().equals(nombreAsignatura)) {
+				referencia = materia.getAttribute("id");
+			}
+		}
+		
+		NodeList alumnos = doc.getElementsByTagName("alumno");
+		
+		for (int j=0; j<alumnos.getLength(); j++) {
+			Element alumno = (Element) alumnos.item(j);
+			
+			Element datos = (Element) alumno.getElementsByTagName("datos").item(0);
+			
+			
+			Element expediente = (Element) alumno.getElementsByTagName("expediente").item(0);
+			NodeList asignaturas = alumno.getElementsByTagName("asignatura");
+			
+			for (int k=0; k<asignaturas.getLength(); k++) {
+				Element asignatura = (Element) asignaturas.item(k);
+				
+				if (asignatura.getAttribute("ref").equals(referencia)) {
+					String nombreAlumno = datos.getElementsByTagName("nombre").item(0).getTextContent();
+					nombresAlumnos.add(nombreAlumno);
+				}
+			}
+		}
+		
+		System.out.println("Los nombres de los alumnos que estudian "+nombreAsignatura);
+		for (String s : nombresAlumnos) {
+			System.out.println(s);
+		}
+		
+	}
+	
+	//Cuanto tiene que pagar 
+	public int calcularPrecioMatricula(String idAlumno) {
+		
+		boolean tieneBeca = false;
+		boolean encontrado = false;
+		int costeTotal = 0;
+		
+		String nombreAlumno = "";
+		
+		ArrayList<String> referencias = new ArrayList<>();
+		
+		NodeList alumnos = doc.getElementsByTagName("alumno");
+		
+		for (int i=0; i<alumnos.getLength(); i++) {
+			Element alumno = (Element) alumnos.item(i);
+			
+			if (alumno.getAttribute("id").equals(idAlumno)) {
+				encontrado = true;
+				//ahora comprobamos si tiene beca o no 
+				Element datos = (Element) alumno.getElementsByTagName("datos").item(0);
+				
+				nombreAlumno = datos.getElementsByTagName("nombre").item(0).getTextContent();
+				
+				tieneBeca = Boolean.parseBoolean(alumno.getAttribute("beca"));
+				
+				if (tieneBeca) {
+					break;
+				} else {
+					//Guardamos las referencias de la asignatura
+					Element expediente = (Element) alumno.getElementsByTagName("expediente").item(0);
+					NodeList asignaturas = expediente.getElementsByTagName("asignatura");
+					
+					for (int j=0; j<asignaturas.getLength(); j++) {
+						Element asignatura = (Element) asignaturas.item(j);
+						
+						referencias.add(asignatura.getAttribute("ref"));
+					}
+				}
+			}
+		}
+		
+		//Una vez ya tenemos las referencias de las asignaturas y no paga beca
+		if (referencias.isEmpty() | tieneBeca) {
+			System.out.println("El alumno esta becado");
+		} else {
+			Element planEstudios = (Element) doc.getElementsByTagName("plan_estudios").item(0);
+			NodeList materias = planEstudios.getElementsByTagName("materia");
+			
+			for (int y=0; y<materias.getLength(); y++) {
+				Element materia = (Element) materias.item(y);
+				
+				for (String refe : referencias)	 {
+					if (refe.equals(materia.getAttribute("id"))) {
+						costeTotal += Integer.parseInt(materia.getAttribute("coste"));
+					}
+				}
+			}
+		}
+		
+		return costeTotal;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

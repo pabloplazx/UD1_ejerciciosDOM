@@ -34,8 +34,12 @@
                         <ciudad>Nueva York</ciudad>
                     </datos>
                     <expediente>
-                        <asignatura ref="AS01"><nota>10.0</nota></asignatura>
-                        <asignatura ref="AS04"><nota>9.5</nota></asignatura>
+                        <asignatura ref="AS01">
+                        		<nota>10.0</nota>
+                        	</asignatura>
+                        <asignatura ref="AS04">
+                        		<nota>9.5</nota>
+                        	</asignatura>
                     </expediente>
                 </alumno>
             </grado>

@@ -45,10 +45,23 @@ public class Principal {
 			
 			switch (op) {
 			case 1:
-				System.out.println("Introduzca id del alumno que quiere emitir el boletin de notas: ");
+				System.out.print("Introduzca id del alumno que quiere emitir el boletin de notas: ");
 				String idBoletin = Leer.linea();
 				
-				gestion.generarBoletinNotas(idBoletin);
+				//gestion.generarBoletinNotas(idBoletin);
+				gestion.generarBoletin(idBoletin);
+				break;
+			case 2:
+				System.out.println("Introduzca nombre de asignatura: ");
+				String nombreAsignatura = Leer.linea();
+				
+				gestion.listarAlumnosPorAsignatura(nombreAsignatura);
+				break;
+			case 3:
+				System.out.println("Introduza id alumno: ");
+				String id_calcularMatricula = Leer.linea();
+				
+				System.out.println(gestion.calcularPrecioMatricula(id_calcularMatricula));
 				break;
 			case 8:
 				System.out.println("Saliendo..");
