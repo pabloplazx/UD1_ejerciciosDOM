@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registro_logistico fecha_emision="2150-05-20T14:00:00Z" sistema="Alpha Centauri">
+    
+    <estacion id="ST-01" tipo="orbital" capacidad_maxima="50">
+        <nombre>Estación Cronos</nombre>
+        <naves_acopladas>
+            <nave matricula="NCC-1701" clase="Explorador">
+                <capitan rango="Comandante" experiencia_anios="15">James T.</capitan>
+                <estado_motor integridad="88%">OPERATIVO</estado_motor>
+                <inventario>
+                    <item id="i-100" peligroso="false">
+                        <descripcion>Raciones de comida</descripcion>
+                        <cantidad unidad="kg">5000.50</cantidad>
+                        <valor_mercado>10000</valor_mercado>
+                    </item>
+                    <item id="i-102" peligroso="true">
+                        <descripcion>Isótopos radiactivos</descripcion>
+                        <cantidad unidad="contenedores">4</cantidad>
+                        <valor_mercado>850000</valor_mercado>
+                    </item>
+                </inventario>
+            </nave>
+
+            <nave matricula="X-wing-09" clase="Caza">
+                <capitan rango="Teniente">Poe D.</capitan>
+                <estado_motor integridad="45%">MANTENIMIENTO_REQUERIDO</estado_motor>
+                </nave>
+        </naves_acopladas>
+    </estacion>
+
+    <estacion id="ST-02" tipo="planetaria">
+        <nombre>Base Lunar Alpha</nombre>
+        <naves_acopladas>
+            <nave matricula="FR-888" clase="Carguero">
+                <capitan rango="Civil">Han S.</capitan>
+                <estado_motor integridad="92%">OPERATIVO</estado_motor>
+                <inventario>
+                    <item id="i-205" peligroso="false">
+                        <descripcion>Piezas de droides</descripcion>
+                        <cantidad unidad="toneladas">12</cantidad>
+                        <valor_mercado>30000</valor_mercado>
+                    </item>
+                </inventario>
+            </nave>
+        </naves_acopladas>
+    </estacion>
+
+</registro_logistico>
