@@ -40,7 +40,7 @@ public class GestionManifiesto {
 		
 	}
 	
-	private List<String> obtenerNavesEnReparacion() {
+	public List<String> obtenerNavesEnReparacion() {
 		List<String> navesReparacion = new ArrayList<>();
 		
 		
@@ -56,7 +56,7 @@ public class GestionManifiesto {
 				
 				String estadoMotor = nave.getElementsByTagName("estado_motor").item(0).getTextContent();
 				
-				if (estadoMotor.equalsIgnoreCase("operativo")) {
+				if (estadoMotor.equalsIgnoreCase("MANTENIMIENTO_REQUERIDO")) {
 					navesReparacion.add(nave.getAttribute("matricula"));
 				}
 
@@ -118,7 +118,7 @@ public class GestionManifiesto {
 					for (int k=0; k<items.getLength(); k++) {
 						Element item = (Element) items.item(k);
 						
-						if (item.getAttribute("id").equalsIgnoreCase("true")) {
+						if (item.getAttribute("peligroso").equalsIgnoreCase("true")) {
 							valorCarga += Double.parseDouble(item.getElementsByTagName("valor_mercado").item(0).getTextContent());
 						} 
 					}
@@ -134,7 +134,28 @@ public class GestionManifiesto {
 	}
 	
 	public double calcularPeso() {
-		return null;
+		
+		double pesoTotal = 0;
+		
+		NodeList naves = doc.getElementsByTagName("nave");
+		
+		for (int i=0; i<naves.getLength(); i++) {
+			Element nave = (Element) naves.item(i);
+			
+			NodeList items = nave.getElementsByTagName("item");
+			
+			for (int j=0; j<items.getLength(); j++) {
+				Element item = (Element) items.item(j);
+				
+				Element cantidad = (Element) item.getElementsByTagName("cantidad").item(0);
+				
+				if (cantidad.getAttribute("unidad").equalsIgnoreCase("kg")) {
+					pesoTotal += Double.parseDouble(cantidad.getTextContent());
+				}
+			}
+		}
+		
+		return pesoTotal;
 	}
 	
 }
