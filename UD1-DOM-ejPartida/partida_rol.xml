@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<savegame id="SG-9902" dificultad="DIFICIL" tiempo_jugado="45h 20m">
+    
+    <jugador nivel="45" clase="Paladin">
+        <nombre>Aragorn</nombre>
+        <estadisticas>
+            <fuerza>85</fuerza>
+            <destreza>40</destreza>
+            <inteligencia>30</inteligencia>
+        </estadisticas>
+        <inventario capacidad_max="100">
+            <item tipo="arma" equipado="true">
+                <nombre>Espada Solar</nombre>
+                <valor>5000</valor>
+                <stats>
+                    <dano>150</dano>
+                    <durabilidad max="100">45</durabilidad>
+                </stats>
+            </item>
+            <item tipo="arma" equipado="false">
+                <nombre>Daga Oxidada</nombre>
+                <valor>50</valor>
+                <stats>
+                    <dano>15</dano>
+                    <durabilidad max="50">0</durabilidad> </stats>
+            </item>
+            <item tipo="consumible">
+                <nombre>Poción de Vida Mayor</nombre>
+                <valor>100</valor>
+                <efecto>Curar 500 HP</efecto>
+                <cantidad>5</cantidad>
+            </item>
+             <item tipo="basura">
+                <nombre>Piel de Lobo</nombre>
+                <valor>10</valor>
+                <cantidad>12</cantidad>
+            </item>
+        </inventario>
+    </jugador>
+
+    <grupo>
+        <companero estado="VIVO">
+            <nombre>Legolas</nombre>
+            <rol>Arquero</rol>
+            <amistad>90</amistad>
+        </companero>
+        <companero estado="MUERTO">
+            <nombre>Boromir</nombre>
+            <rol>Guerrero</rol>
+            <amistad>100</amistad>
+            <causa_muerte>Flechas de Orco</causa_muerte>
+        </companero>
+    </grupo>
+
+    <diario_misiones>
+        <mision id="Q-001" tipo="PRINCIPAL" completada="true">
+            <titulo>El Anillo Único</titulo>
+            <zona>Monte del Destino</zona>
+            <recompensa_oro>10000</recompensa_oro>
+        </mision>
+        <mision id="Q-055" tipo="SECUNDARIA" completada="false">
+            <titulo>Rescatar al Gato</titulo>
+            <zona>Aldea Inicial</zona>
+            <recompensa_xp>500</recompensa_xp>
+            <limite_tiempo>24h</limite_tiempo>
+        </mision>
+        <mision id="Q-099" tipo="GREMIO" completada="false">
+            <titulo>Cazar Dragón</titulo>
+            <zona>Montañas Norte</zona>
+            <recompensa_oro>50000</recompensa_oro>
+        </mision>
+    </diario_misiones>
+
+    <facciones>
+        <faccion nombre="Reino Humano" hostil="false">
+            <reputacion>EXALTADO</reputacion>
+        </faccion>
+        <faccion nombre="Orcos de Mordor" hostil="true">
+            <reputacion>ODIADO</reputacion>
+        </faccion>
+    </facciones>
+
+</savegame>
